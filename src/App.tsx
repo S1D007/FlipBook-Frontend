@@ -36,7 +36,7 @@ function App() {
     formData.append('video', file);
 
     try {
-      const response = await axios.post('https://43.205.255.102.nip.io/flipbook?count=40', formData, {
+      const response = await axios.post('https://13.233.124.221.nip.io/flipbook?count=40', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
