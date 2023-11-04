@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
 import io from 'socket.io-client';
 
-const socket = io('https://43.205.255.102.nip.io',{
+const socket = io('https://13.233.124.221.nip.io/',{
   transports: ['websocket'],
 });
 
@@ -31,11 +31,12 @@ function App() {
   }, [jobId]);
 
   const handleUpload = async () => {
+    setSent(true);
     const formData = new FormData();
     formData.append('video', file);
 
     try {
-      const response = await axios.post('https://43.205.255.102.nip.io/flipbook?count=40', formData, {
+      const response = await axios.post('https://13.233.124.221.nip.io/flipbook?count=40', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -45,7 +46,6 @@ function App() {
       });
 
       setJobId(response.data.jobId);
-      setSent(true);
     } catch (error) {
       console.error('Error occurred during upload:', error);
     }
