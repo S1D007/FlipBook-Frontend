@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 import io from "socket.io-client";
 
-const socket = io("https://13.233.225.40.nip.io/", {
+const socket = io("https://flipbook-api.gokapturehub.com", {
   transports: ["websocket"],
 });
 
@@ -44,7 +44,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://13.233.225.40.nip.io/flipbook?count=40",
+        "https://flipbook-api.gokapturehub.com/flipbook?count=40",
         formData,
         {
           headers: {
